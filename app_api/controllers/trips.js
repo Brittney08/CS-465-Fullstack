@@ -24,8 +24,8 @@ const tripsList = async(req, res) => {
             .status(200)
             .json(q);
     }
-};
 
+};
 
 // Get: /trips/:tripCode - lists a single trip
 //Regardless of outcome, respomse must include HTML status code

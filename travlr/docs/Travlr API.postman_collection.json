@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "810f99ba-50d4-44cd-bb6a-d74c5b4200ee",
+		"name": "CS-465/470 Travlr API",
+		"description": "APIs for the Travlr website for CS-465/470.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21535755"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "testy.tester@test.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{travlr_host}}/api/login",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Authenticate to a current user and return a JWT."
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Testy Tester",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testy.tester@test.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{travlr_host}}/api/register",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Register a new user and return a JWT."
+			},
+			"response": []
+		},
+		{
+			"name": "meals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/meals/",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"meals",
+						""
+					]
+				},
+				"description": "Returns all meals."
+			},
+			"response": []
+		},
+		{
+			"name": "meals/:mealCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/meals/{{mealCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"meals",
+						"{{mealCode}}"
+					]
+				},
+				"description": "Returns a single meal identified by a meal code at the end of the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "news",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/news/",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"news",
+						""
+					]
+				},
+				"description": "Returns all news content."
+			},
+			"response": []
+		},
+		{
+			"name": "news/:newsCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/news/{{newsCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"news",
+						"{{newsCode}}"
+					]
+				},
+				"description": "Returns a single piece of news content identified by a news code at the end of the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/rooms/",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"rooms",
+						""
+					]
+				},
+				"description": "Returns all rooms."
+			},
+			"response": []
+		},
+		{
+			"name": "rooms/:roomCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/rooms/{{roomCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"rooms",
+						"{{roomCode}}"
+					]
+				},
+				"description": "Returns a single room identified by a room code at the end of the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "trips",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/trips/",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"trips",
+						""
+					]
+				},
+				"description": "Returns all trips."
+			},
+			"response": []
+		},
+		{
+			"name": "trips",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "MEGR240119",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mega Reef",
+							"type": "text"
+						},
+						{
+							"key": "length",
+							"value": "6 nights / 7 days",
+							"type": "text"
+						},
+						{
+							"key": "start",
+							"value": "2024-01-19T08:00:00.000+0000",
+							"type": "text"
+						},
+						{
+							"key": "resort",
+							"value": "Barrier Island Resort",
+							"type": "text"
+						},
+						{
+							"key": "perPerson",
+							"value": "3499.00",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "reef1.jpg",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "<p>The Great Barrier Reef...donec sed felis risus. Nulla facilisi. Donec a orci tellus, et auctor odio. Fusce ac orci nibh, quis semper arcu. Cras orci neque, euismod et accumsan ac, sagittis molestie lorem. Proin odio sapien, elementum at tempor non.</p><p>Vulputate eget libero. In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis.</p>",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{travlr_host}}/api/trips/",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"trips",
+						""
+					]
+				},
+				"description": "Add a trip."
+			},
+			"response": []
+		},
+		{
+			"name": "trips/:tripCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/trips/{{tripCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"trips",
+						"{{tripCode}}"
+					]
+				},
+				"description": "Returns a single trip identified by a trip code at the end of the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "trips/:tripCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "MEGR240119",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mega Reef",
+							"type": "text"
+						},
+						{
+							"key": "length",
+							"value": "6 nights / 5 days",
+							"type": "text"
+						},
+						{
+							"key": "start",
+							"value": "2024-01-19T08:00:00.000+0000",
+							"type": "text"
+						},
+						{
+							"key": "resort",
+							"value": "Barrier Island Resort",
+							"type": "text"
+						},
+						{
+							"key": "perPerson",
+							"value": "3499.00",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "reef2.jpg",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "<p>The Great Barrier Reef...donec sed felis risus. Nulla facilisi. Donec a orci tellus, et auctor odio. Fusce ac orci nibh, quis semper arcu. Cras orci neque, euismod et accumsan ac, sagittis molestie lorem. Proin odio sapien, elementum at tempor non.</p><p>Vulputate eget libero. In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis.</p>",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{travlr_host}}/api/trips/{{tripCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"trips",
+						"{{tripCode}}"
+					]
+				},
+				"description": "Updates a trip identified by a trip code at the end of the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "trips/:tripCode",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{travlr_host}}/api/trips/{{tripCode}}",
+					"host": [
+						"{{travlr_host}}"
+					],
+					"path": [
+						"api",
+						"trips",
+						"{{tripCode}}"
+					]
+				},
+				"description": "Deletes a trip identified by a trip code at the end of the URL."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newsCode",
+			"value": "FEATURED_1",
+			"type": "string"
+		},
+		{
+			"key": "roomCode",
+			"value": "FIRSTCLASS",
+			"type": "string"
+		},
+		{
+			"key": "tripCode",
+			"value": "DAWR20240315"
+		},
+		{
+			"key": "mealCode",
+			"value": "BUFFET"
+		}
+	]
+}
